@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinUI_Caculator (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinUI_Caculator (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
