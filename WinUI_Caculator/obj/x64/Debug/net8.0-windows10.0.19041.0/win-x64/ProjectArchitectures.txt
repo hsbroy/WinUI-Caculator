@@ -1,1 +1,1 @@
-C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\WinUI_Caculator.csproj;x64
+C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\WinUI_Caculator.csproj;x64
