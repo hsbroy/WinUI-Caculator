@@ -34,6 +34,12 @@
         <!-- 顯示區 -->
         <!-- 顯示區：把 Text 綁到 DisplayText -->
         <TextBox x:ConnectionId='3' x:Name="textNumber" Grid.Row="0" Grid.ColumnSpan="5" FontSize="36" Margin="0,0,0,10" TextAlignment="Right" Text="{Binding DisplayText, Mode=TwoWay}" IsReadOnly="True"/>
+        <!--Mode=TwoWay 表示
+            1. ViewModel 改變屬性 → UI 自動更新。
+            2. UI 改變文字 (TextBox 可編輯) → 自動更新 ViewModel 屬性。
+        因為TextBox 是 IsReadOnly=True，所以實際上只有 ViewModel → UI 的方向。
+        透過ViewModel找到映射的函數，計算完的結果會顯示在TextBox 上。
+        -->
 
 
         <!-- 按鍵 -->

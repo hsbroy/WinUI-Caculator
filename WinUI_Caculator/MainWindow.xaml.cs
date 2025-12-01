@@ -1,3 +1,5 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -14,8 +16,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+using static WinUI_Caculator.MainWindow;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -38,6 +39,30 @@ namespace WinUI_Caculator
             // 這樣 XAML 上的 {Binding DisplayText} 或 {Binding NumberCommand} 就會自動對應到 ViewModel 的屬性和命令。
         }
 
+        public enum Operator { ADD = '+', SUB = '-', MUL = '*', DIV = '/' };
+
+        public static class OperatorHelper
+        {
+            public static bool TryConvertSymbolToOperator(string symbol, out Operator op)
+            {
+                switch (symbol)
+                {
+                    case "+":
+                        op = Operator.ADD; return true;
+                    case "-":
+                        op = Operator.SUB; return true;
+                    case "*":
+                        op = Operator.MUL; return true;
+                    case "/":
+                        op = Operator.DIV; return true;
+                    default:
+                        op = default;
+                        return false;
+                }
+            }
+        }
+
+    }
         public partial class CalculatorViewModel : ObservableObject
         {
             // 顯示欄位
@@ -47,7 +72,7 @@ namespace WinUI_Caculator
             private string messageText = "";  // 顯示錯誤或提示訊息
 
             private float firstNumber, secondNumber; // firstNumber 儲存第一個數字，secondNumber 儲存第二個數字
-            private string? currentOperator; // 記錄選擇哪一種運算符號？0:加、1:減、2:乘、3:除、-1:重新設定
+            private Operator? currentOperator = null;    // 記錄選擇哪一種運算符號？0:加、1:減、2:乘、3:除、-1:重新設定
 
             // 數字按鍵命令，CommandParameter 傳入字串 "0"~"9" 或 "."
             public IRelayCommand<string> NumberCommand { get; }
@@ -77,15 +102,25 @@ namespace WinUI_Caculator
                     DisplayText += num;
             }
 
-            private void OnOperatorPressed(string op)
+            private void OnOperatorPressed(string symbol)
             {
-                if (float.TryParse(DisplayText, out firstNumber))
+                if (!float.TryParse(DisplayText, out firstNumber))
+                {
+                    MessageText = "輸入錯誤";
+                    return;
+                }
+
+                if (OperatorHelper.TryConvertSymbolToOperator(symbol, out var op))
                 {
                     currentOperator = op;
-                    DisplayText = "0";
                 }
                 else
-                    MessageText = "輸入錯誤";
+                {
+                    MessageText = "運算符錯誤";
+                    return;
+                }
+
+                DisplayText = "0";
             }
 
             private void OnEqualPressed()
@@ -99,16 +134,16 @@ namespace WinUI_Caculator
                 float result = 0;
                 switch (currentOperator)
                 {
-                    case "+":
+                    case Operator.ADD:
                         result = firstNumber + secondNumber;
                         break;
-                    case "-":
+                    case Operator.SUB:
                         result = firstNumber - secondNumber;
                         break;
-                    case "*":
+                    case Operator.MUL:
                         result = firstNumber * secondNumber;
                         break;
-                    case "/":
+                    case Operator.DIV:
                         if (secondNumber == 0)
                         {
                             MessageText = "除數不可為0";
@@ -116,6 +151,9 @@ namespace WinUI_Caculator
                         }
                         result = firstNumber / secondNumber;
                         break;
+                    default:
+                        MessageText = "尚未選擇運算符";
+                        return;
                 }
                 DisplayText = result.ToString();
                 firstNumber = secondNumber = 0;
@@ -130,5 +168,4 @@ namespace WinUI_Caculator
                 currentOperator = null;
             }
         }
-    }
 }
