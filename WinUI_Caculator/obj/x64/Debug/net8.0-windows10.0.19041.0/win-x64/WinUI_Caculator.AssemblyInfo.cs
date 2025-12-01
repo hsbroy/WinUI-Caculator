@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinUI_Caculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+656988fad223587fe36848723066403bed81f2ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+698ea1f809030b6c1952120ab0e073f60b618bd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinUI_Caculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinUI_Caculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

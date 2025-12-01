@@ -10,28 +10,28 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>4cf74b33-0916-4bda-8ec2-7b2022a213bb</PackageIdentityName>
     <PackageIdentityPublisher>CN=roy15</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.runtimeconfig.json">
       <PackagePath>WinUI_Caculator.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>WinUI_Caculator.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.dll">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.dll">
       <PackagePath>WinUI_Caculator.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.22\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
@@ -697,34 +697,34 @@
     <AppxPackagedFile Include="C:\Users\roy15\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net8.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.deps.json">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.deps.json">
       <PackagePath>WinUI_Caculator.deps.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\.nuget\packages\microsoft.web.webview2\1.0.3179.45\build\..\lib\Microsoft.Web.WebView2.Core.winmd">
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator_MVVM\WinUI-Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
