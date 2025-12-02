@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>352987D95CF2AF612C9E8216D78F70ED5751682D38653D38FB26045D407E73D0</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>3960A6DDAD08619E97A502F1E8AAEAF70453363B62BE41519E310F95F5BECCD1</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>4cf74b33-0916-4bda-8ec2-7b2022a213bb_1.0.0.0_x64__063521rx6efpy</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>4cf74b33-0916-4bda-8ec2-7b2022a213bb_063521rx6efpy!App</RegisteredUserModeAppID>
     <RegisteredPackageID>4cf74b33-0916-4bda-8ec2-7b2022a213bb</RegisteredPackageID>
@@ -29,21 +29,21 @@
     <AppXManifest Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-12-01T11:57:44.612</Modified>
+      <Modified>2025-12-02T07:59:45.036</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.runtimeconfig.json">
-      <PackagePath>WinUI_Caculator.runtimeconfig.json</PackagePath>
-      <Modified>2025-12-01T11:57:44.011</Modified>
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Calculator.runtimeconfig.json">
+      <PackagePath>WinUI_Calculator.runtimeconfig.json</PackagePath>
+      <Modified>2025-12-02T06:54:19.058</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
-      <PackagePath>WinUI_Caculator.exe</PackagePath>
-      <Modified>2025-12-01T11:57:43.830</Modified>
+      <PackagePath>WinUI_Calculator.exe</PackagePath>
+      <Modified>2025-12-02T07:59:44.336</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.dll">
-      <PackagePath>WinUI_Caculator.dll</PackagePath>
-      <Modified>2025-12-01T11:57:43.825</Modified>
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Calculator.dll">
+      <PackagePath>WinUI_Calculator.dll</PackagePath>
+      <Modified>2025-12-02T07:59:44.333</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.22\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -929,9 +929,9 @@
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
       <Modified>2025-03-30T09:04:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Caculator.deps.json">
-      <PackagePath>WinUI_Caculator.deps.json</PackagePath>
-      <Modified>2025-12-01T11:57:44.004</Modified>
+    <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Calculator.deps.json">
+      <PackagePath>WinUI_Calculator.deps.json</PackagePath>
+      <Modified>2025-12-02T06:54:18.992</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -967,7 +967,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-12-01T11:57:44.226</Modified>
+      <Modified>2025-12-02T07:59:44.692</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,16 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Application
-    x:Class="WinUI_Caculator.App"
+    x:Class="WinUI_Calculator.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WinUI_Caculator">
+    xmlns:local="using:WinUI_Calculator">
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Other merged dictionaries here -->
+                <!-- WinUI 控制項資源 -->
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+                <!-- 其他外部資源字典也可以放這裡 -->
             </ResourceDictionary.MergedDictionaries>
-            <!-- Other app resources here -->
+
+            <!-- 全域按鈕樣式 -->
+            <Style x:Key="CalculatorButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="Gray"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Margin" Value="2"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid">
+                                <Border x:Name="ButtonBorder"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="3">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder"
+                                                                               Storyboard.TargetProperty="Background">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="#FFE0E0E0"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBorder"
+                                                                               Storyboard.TargetProperty="Background">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="#FFD0D0D0"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
+

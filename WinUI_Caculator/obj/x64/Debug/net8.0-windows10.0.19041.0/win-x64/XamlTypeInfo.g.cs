@@ -10,22 +10,22 @@
 using System.Diagnostics.CodeAnalysis;
 
 
-namespace WinUI_Caculator
+namespace WinUI_Calculator
 {
     public partial class App : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2511")]
-        private global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2511")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        private global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
             get
             {
                 if (__appProvider == null)
                 {
-                    __appProvider = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMetaDataProvider();
+                    __appProvider = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMetaDataProvider();
                 }
                 return __appProvider;
             }
@@ -63,7 +63,7 @@ namespace WinUI_Caculator
     }
 }
 
-namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
+namespace WinUI_Caculator.WinUI_Calculator_XamlTypeInfo
 {
     /// <summary>
     /// Main class for providing metadata for the app or library
@@ -72,15 +72,15 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed partial class XamlMetaDataProvider : global::Microsoft.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+        private global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
-        private global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider Provider
+        private global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider Provider
         {
             get
             {
                 if (_provider == null)
                 {
-                    _provider = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider();
+                    _provider = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider();
                 }
                 return _provider;
             }
@@ -130,7 +130,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
                 {
                     xamlType = CreateXamlType(typeIndex);
                 }
-                var userXamlType = xamlType as global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType;
+                var userXamlType = xamlType as global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType;
                 if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
                 {
                     global::Microsoft.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
@@ -169,7 +169,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
                 {
                     xamlType = CreateXamlType(typeIndex);
                 }
-                var userXamlType = xamlType as global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType;
+                var userXamlType = xamlType as global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType;
                 if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
                 {
                     global::Microsoft.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
@@ -226,39 +226,43 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[15];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
-            _typeNameTable[4] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
-            _typeNameTable[5] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
-            _typeNameTable[6] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
-            _typeNameTable[7] = "System.Enum";
-            _typeNameTable[8] = "System.ValueType";
-            _typeNameTable[9] = "WinUI_Caculator.MainWindow";
-            _typeNameTable[10] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[11] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[12] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[13] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[14] = "Int32";
+            _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.Button";
+            _typeNameTable[5] = "WinUI_Calculator.MainWindow";
+            _typeNameTable[6] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[7] = "WinUI_Caculator.ViewModels.CalculatorViewModel";
+            _typeNameTable[8] = "CommunityToolkit.Mvvm.ComponentModel.ObservableObject";
+            _typeNameTable[9] = "WinUI_Calculator.Views.BaseConversionView";
+            _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[11] = "WinUI_Calculator.Views.CalculatorView";
+            _typeNameTable[12] = "WinUI_Calculator.Views.TemperatureView";
+            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[14] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[15] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[16] = "Int32";
 
-            _typeTable = new global::System.Type[15];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
-            _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
-            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
-            _typeTable[6] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
-            _typeTable[7] = typeof(global::System.Enum);
-            _typeTable[8] = typeof(global::System.ValueType);
-            _typeTable[9] = typeof(global::WinUI_Caculator.MainWindow);
-            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[13] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[14] = typeof(global::System.Int32);
+            _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.Button);
+            _typeTable[5] = typeof(global::WinUI_Calculator.MainWindow);
+            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[7] = typeof(global::WinUI_Caculator.ViewModels.CalculatorViewModel);
+            _typeTable[8] = typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject);
+            _typeTable[9] = typeof(global::WinUI_Calculator.Views.BaseConversionView);
+            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[11] = typeof(global::WinUI_Calculator.Views.CalculatorView);
+            _typeTable[12] = typeof(global::WinUI_Calculator.Views.TemperatureView);
+            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[15] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[16] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -294,17 +298,21 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_4_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
-        private object Activate_9_MainWindow() { return new global::WinUI_Caculator.MainWindow(); }
-        private object Activate_11_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_5_MainWindow() { return new global::WinUI_Calculator.MainWindow(); }
+        private object Activate_7_CalculatorViewModel() { return new global::WinUI_Caculator.ViewModels.CalculatorViewModel(); }
+        private object Activate_9_BaseConversionView() { return new global::WinUI_Calculator.Views.BaseConversionView(); }
+        private object Activate_11_CalculatorView() { return new global::WinUI_Calculator.Views.CalculatorView(); }
+        private object Activate_12_TemperatureView() { return new global::WinUI_Calculator.Views.TemperatureView(); }
+        private object Activate_13_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
-        private void StaticInitializer_4_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
-        private void StaticInitializer_6_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
-        private void StaticInitializer_7_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
-        private void StaticInitializer_8_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_9_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Caculator.MainWindow).TypeHandle);
-        private void StaticInitializer_11_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_13_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_5_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.MainWindow).TypeHandle);
+        private void StaticInitializer_7_CalculatorViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Caculator.ViewModels.CalculatorViewModel).TypeHandle);
+        private void StaticInitializer_8_ObservableObject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject).TypeHandle);
+        private void StaticInitializer_9_BaseConversionView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.Views.BaseConversionView).TypeHandle);
+        private void StaticInitializer_11_CalculatorView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.Views.CalculatorView).TypeHandle);
+        private void StaticInitializer_12_TemperatureView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.Views.TemperatureView).TypeHandle);
+        private void StaticInitializer_13_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_15_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -312,7 +320,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_13_IList(object instance, object item)
+        private void VectorAdd_15_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -321,8 +329,8 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
 
         private global::Microsoft.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType userType;
+            global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
@@ -330,7 +338,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
             {
 
             case 0:   //  Microsoft.UI.Xaml.Controls.XamlControlsResources
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.ResourceDictionary"));
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.ResourceDictionary"));
                 userType.Activator = Activate_0_XamlControlsResources;
                 userType.StaticInitializer = StaticInitializer_0_XamlControlsResources;
                 userType.DictionaryAdd = MapAdd_0_XamlControlsResources;
@@ -339,65 +347,80 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
                 break;
 
             case 1:   //  Microsoft.UI.Xaml.ResourceDictionary
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Object
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 3:   //  Boolean
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Media.SystemBackdrop"));
-                userType.Activator = Activate_4_MicaBackdrop;
-                userType.StaticInitializer = StaticInitializer_4_MicaBackdrop;
-                userType.AddMemberName("Kind");
-                xamlType = userType;
+            case 4:   //  Microsoft.UI.Xaml.Controls.Button
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 6:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_6_MicaKind;
-                userType.AddEnumValue("Base", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.Base);
-                userType.AddEnumValue("BaseAlt", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt);
-                xamlType = userType;
-                break;
-
-            case 7:   //  System.Enum
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_7_Enum;
-                xamlType = userType;
-                break;
-
-            case 8:   //  System.ValueType
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_8_ValueType;
-                xamlType = userType;
-                break;
-
-            case 9:   //  WinUI_Caculator.MainWindow
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_9_MainWindow;
-                userType.StaticInitializer = StaticInitializer_9_MainWindow;
+            case 5:   //  WinUI_Calculator.MainWindow
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
+                userType.Activator = Activate_5_MainWindow;
+                userType.StaticInitializer = StaticInitializer_5_MainWindow;
+                userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.UI.Xaml.Window
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 6:   //  Microsoft.UI.Xaml.Window
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_11_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_11_TreeViewNode;
+            case 7:   //  WinUI_Caculator.ViewModels.CalculatorViewModel
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
+                userType.StaticInitializer = StaticInitializer_7_CalculatorViewModel;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.StaticInitializer = StaticInitializer_8_ObservableObject;
+                xamlType = userType;
+                break;
+
+            case 9:   //  WinUI_Calculator.Views.BaseConversionView
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_9_BaseConversionView;
+                userType.StaticInitializer = StaticInitializer_9_BaseConversionView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Microsoft.UI.Xaml.Controls.UserControl
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  WinUI_Calculator.Views.CalculatorView
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_11_CalculatorView;
+                userType.StaticInitializer = StaticInitializer_11_CalculatorView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 12:   //  WinUI_Calculator.Views.TemperatureView
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_12_TemperatureView;
+                userType.StaticInitializer = StaticInitializer_12_TemperatureView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_13_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_13_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -409,20 +432,20 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 12:   //  Microsoft.UI.Xaml.DependencyObject
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 14:   //  Microsoft.UI.Xaml.DependencyObject
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
-                userType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_13_IList;
-                userType.CollectionAdd = VectorAdd_13_IList;
+            case 15:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+                userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.StaticInitializer = StaticInitializer_15_IList;
+                userType.CollectionAdd = VectorAdd_15_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 14:   //  Int32
-                xamlType = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 16:   //  Int32
+                xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
@@ -493,15 +516,10 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
             var that = (global::Microsoft.UI.Xaml.Controls.XamlControlsResources)instance;
             that.UseCompactResources = (global::System.Boolean)Value;
         }
-        private object get_1_MicaBackdrop_Kind(object instance)
+        private object get_1_MainWindow_ViewModel(object instance)
         {
-            var that = (global::Microsoft.UI.Xaml.Media.MicaBackdrop)instance;
-            return that.Kind;
-        }
-        private void set_1_MicaBackdrop_Kind(object instance, object Value)
-        {
-            var that = (global::Microsoft.UI.Xaml.Media.MicaBackdrop)instance;
-            that.Kind = (global::Microsoft.UI.Composition.SystemBackdrops.MicaKind)Value;
+            var that = (global::WinUI_Calculator.MainWindow)instance;
+            return that.ViewModel;
         }
         private object get_2_TreeViewNode_Children(object instance)
         {
@@ -556,68 +574,67 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
 
         private global::Microsoft.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember xamlMember = null;
-            global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType userType;
+            global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember xamlMember = null;
+            global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType userType;
 
             switch (longMemberName)
             {
             case "Microsoft.UI.Xaml.Controls.XamlControlsResources.UseCompactResources":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.XamlControlsResources");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "UseCompactResources", "Boolean");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.XamlControlsResources");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "UseCompactResources", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_0_XamlControlsResources_UseCompactResources;
                 xamlMember.Setter = set_0_XamlControlsResources_UseCompactResources;
                 break;
-            case "Microsoft.UI.Xaml.Media.MicaBackdrop.Kind":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Media.MicaBackdrop");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "Kind", "Microsoft.UI.Composition.SystemBackdrops.MicaKind");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_1_MicaBackdrop_Kind;
-                xamlMember.Setter = set_1_MicaBackdrop_Kind;
+            case "WinUI_Calculator.MainWindow.ViewModel":
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI_Calculator.MainWindow");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "ViewModel", "WinUI_Caculator.ViewModels.CalculatorViewModel");
+                xamlMember.Getter = get_1_MainWindow_ViewModel;
+                xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
                 xamlMember.Getter = get_2_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "Content", "Object");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_3_TreeViewNode_Content;
                 xamlMember.Setter = set_3_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_4_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_5_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
                 xamlMember.Getter = get_6_TreeViewNode_HasUnrealizedChildren;
                 xamlMember.Setter = set_6_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_TreeViewNode_IsExpanded;
                 xamlMember.Setter = set_7_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
-                userType = (global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
+                userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember.Getter = get_8_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
@@ -680,10 +697,10 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2511")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal partial class XamlUserType : global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlSystemBaseType
+    internal partial class XamlUserType : global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType
         , global::Microsoft.UI.Xaml.Markup.IXamlType
     {
-        global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Microsoft.UI.Xaml.Markup.IXamlType _baseType;
         global::Microsoft.UI.Xaml.Markup.IXamlType _boxedType;
         bool _isArray;
@@ -698,7 +715,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, 
+        public XamlUserType(global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, 
             global::System.Type fullType, global::Microsoft.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
@@ -915,7 +932,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal partial class XamlMember : global::Microsoft.UI.Xaml.Markup.IXamlMember
     {
-        global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -924,7 +941,7 @@ namespace WinUI_Caculator.WinUI_Caculator_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::WinUI_Caculator.WinUI_Caculator_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

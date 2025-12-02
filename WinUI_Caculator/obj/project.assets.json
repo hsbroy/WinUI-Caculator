@@ -3289,9 +3289,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\WinUI_Caculator.csproj",
-      "projectName": "WinUI_Caculator",
-      "projectPath": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\WinUI_Caculator.csproj",
+      "projectUniqueName": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\WinUI_Calculator.csproj",
+      "projectName": "WinUI_Calculator",
+      "projectPath": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\WinUI_Calculator.csproj",
       "packagesPath": "C:\\Users\\roy15\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+O9YjM3J66E=",
+  "dgSpecHash": "MI0cZZSwIIE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\WinUI_Caculator.csproj",
+  "projectFilePath": "C:\\Users\\roy15\\source\\repos\\WinUI_Caculator\\WinUI_Caculator\\WinUI_Calculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roy15\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\roy15\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
