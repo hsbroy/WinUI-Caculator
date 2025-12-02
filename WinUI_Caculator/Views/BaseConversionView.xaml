@@ -3,7 +3,7 @@
     x:Class="WinUI_Calculator.Views.BaseConversionView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:WinUI_Caculator.Views"
+    xmlns:local="using:WinUI_Calculator.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -11,58 +11,72 @@
     <Grid Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
+            <!-- 顯示區 -->
             <RowDefinition Height="60"/>
+            <!-- 進制選擇 -->
             <RowDefinition/>
+            <!-- 數字鍵 -->
         </Grid.RowDefinitions>
 
         <!-- 顯示區 -->
-        <StackPanel Grid.Row="0">
-            <TextBlock Text="{Binding DisplayText}"
-                   FontSize="48"
+        <StackPanel Grid.Row="0" Margin="10" Spacing="5">
+            <!-- DisplayText -->
+            <Border BorderBrush="Gray" BorderThickness="2" CornerRadius="5" Padding="5">
+                <TextBlock Text="{Binding DisplayText}"
+                   FontSize="32"
                    HorizontalAlignment="Right"/>
-            <TextBlock Text="{Binding MessageText}"
+            </Border>
+
+            <!-- MessageText -->
+            <Border BorderBrush="black" BorderThickness="2" CornerRadius="3" Padding="2">
+                <TextBlock Text="{Binding MessageText}"
                    Foreground="Red"
                    FontSize="16"
-                   HorizontalAlignment="Right"/>
+                   HorizontalAlignment="Right"/> 
+            </Border>
         </StackPanel>
 
         <!-- 進制選擇 -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="15">
-            <Button Content="BIN" Command="{Binding BaseConversionCommand}" CommandParameter="BIN"/>
-            <Button Content="OCT" Command="{Binding BaseConversionCommand}" CommandParameter="OCT"/>
-            <Button Content="DEC" Command="{Binding BaseConversionCommand}" CommandParameter="DEC"/>
-            <Button Content="HEX" Command="{Binding BaseConversionCommand}" CommandParameter="HEX"/>
+            <Button Content="BIN" Command="{Binding BaseConversionCommand}" CommandParameter="BIN" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Content="OCT" Command="{Binding BaseConversionCommand}" CommandParameter="OCT" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Content="DEC" Command="{Binding BaseConversionCommand}" CommandParameter="DEC" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Content="HEX" Command="{Binding BaseConversionCommand}" CommandParameter="HEX" Style="{StaticResource CalculatorButtonStyle}"/>
         </StackPanel>
 
         <!-- 數字鍵 -->
         <Grid Grid.Row="2" Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" Content="0" Command="{Binding NumberCommand}" CommandParameter="0"/>
-            <Button Grid.Row="0" Grid.Column="1" Content="1" Command="{Binding NumberCommand}" CommandParameter="1"/>
-            <Button Grid.Row="0" Grid.Column="2" Content="2" Command="{Binding NumberCommand}" CommandParameter="2"/>
-            <Button Grid.Row="0" Grid.Column="3" Content="3" Command="{Binding NumberCommand}" CommandParameter="3"/>
+            <!-- 數字 -->
+            <Button Grid.Row="0" Grid.Column="1" Content="1" Width="80" Height="80" FontSize="48" Command="{Binding NumberCommand}" CommandParameter="1" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="2" Width="80" Height="80" FontSize="48" Command="{Binding NumberCommand}" CommandParameter="2" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="3" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="3" Style="{StaticResource CalculatorButtonStyle}"/>
 
-            <Button Grid.Row="1" Grid.Column="0" Content="4" Command="{Binding NumberCommand}" CommandParameter="4"/>
-            <Button Grid.Row="1" Grid.Column="1" Content="5" Command="{Binding NumberCommand}" CommandParameter="5"/>
-            <Button Grid.Row="1" Grid.Column="2" Content="6" Command="{Binding NumberCommand}" CommandParameter="6"/>
-            <Button Grid.Row="1" Grid.Column="3" Content="7" Command="{Binding NumberCommand}" CommandParameter="7"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="4" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="4" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="5" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="5" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="6" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="6" Style="{StaticResource CalculatorButtonStyle}"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Content="8" Command="{Binding NumberCommand}" CommandParameter="8"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="9" Command="{Binding NumberCommand}" CommandParameter="9"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="7" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="7" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="8" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="8" Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="2" Grid.Column="3" Content="9" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="9" Style="{StaticResource CalculatorButtonStyle}"/>
 
-            <Button Grid.Row="3" Grid.Column="3" Content="C" Command="{Binding ClearCommand}"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="0" Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="0" Style="{StaticResource CalculatorButtonStyle}"/>
+
+            <Button Grid.Row="3" Grid.Column="2" Content="." Width="80" Height="80"  FontSize="48" Command="{Binding NumberCommand}" CommandParameter="." Style="{StaticResource CalculatorButtonStyle}"/>
+            <Button Grid.Row="0" Grid.Column="0" Content="C" Width="80" Height="80"  FontSize="48" Command="{Binding ClearCommand}" Style="{StaticResource CalculatorButtonStyle}"/>
         </Grid>
     </Grid>
 </UserControl>

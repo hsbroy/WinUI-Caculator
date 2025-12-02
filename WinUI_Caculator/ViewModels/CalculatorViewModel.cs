@@ -42,7 +42,8 @@ namespace WinUI_Caculator.ViewModels
             if (num == ".")
             {
                 // 如果已經有小數點，就不加
-                if (DisplayText.Contains(".")) return;
+                if (DisplayText.Contains(".")) 
+                    return;
                 DisplayText += ".";
             }
             else
@@ -119,21 +120,56 @@ namespace WinUI_Caculator.ViewModels
 
         private void OnBaseConversion(string baseType)
         {
-            if (!int.TryParse(DisplayText, out int num))
+            if (!double.TryParse(DisplayText, out double num))
             {
                 MessageText = "輸入錯誤";
                 return;
             }
 
-            DisplayText = baseType switch
+            // 處理小數（抓整數與小數部分）
+            long integerPart = (long)Math.Floor(num);  // 整數
+            double fractionalPart = Math.Abs(num - integerPart); // 小數
+
+            string ConvertFraction(double frac, int targetBase)
             {
-                "BIN" => Convert.ToString(num, 2),
-                "OCT" => Convert.ToString(num, 8),
-                "DEC" => num.ToString(),
-                "HEX" => Convert.ToString(num, 16).ToUpper(),
-                _ => DisplayText
-            };
+                string result = "";
+                int limit = 8; // 最多 8 位小數
+                while (frac > 0 && limit-- > 0)
+                {
+                    frac *= targetBase;
+                    int digit = (int)Math.Floor(frac);
+                    result += digit < 10 ? digit.ToString() : ((char)('A' + digit - 10)).ToString();
+                    frac -= digit;
+                }
+                return result;
+            }
+
+            switch (baseType)
+            {
+                case "BIN": // 2 進位
+                    DisplayText =
+                        Convert.ToString(integerPart, 2) +
+                        (fractionalPart > 0 ? "." + ConvertFraction(fractionalPart, 2) : "");
+                    break;
+
+                case "OCT": // 8 進位
+                    DisplayText =
+                        Convert.ToString(integerPart, 8) +
+                        (fractionalPart > 0 ? "." + ConvertFraction(fractionalPart, 8) : "");
+                    break;
+
+                case "DEC": // 10 進位
+                    DisplayText = num.ToString();
+                    break;
+
+                case "HEX": // 16 進位
+                    DisplayText =
+                        Convert.ToString(integerPart, 16).ToUpper() +
+                        (fractionalPart > 0 ? "." + ConvertFraction(fractionalPart, 16) : "");
+                    break;
+            }
         }
+
 
         private void OnTemperatureConversion(string mode)
         {
@@ -145,9 +181,10 @@ namespace WinUI_Caculator.ViewModels
 
             double result = mode switch
             {
-                "C→F" => value * 9 / 5 + 32,
-                "F→C" => (value - 32) * 5 / 9,
-                "C→K" => value + 273.15,
+                "CtoF" => value * 9 / 5 + 32,
+                "FtoC" => (value - 32) * 5 / 9,
+                "CtoK" => value + 273.15,
+                "KtoC" => value - 273.15,
                 _ => value
             };
 

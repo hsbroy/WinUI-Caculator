@@ -11,7 +11,7 @@ namespace WinUI_Calculator
 
         public MainWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             // 預設模式：加減乘除
             ModeContent.Content = new CalculatorView { DataContext = ViewModel };
