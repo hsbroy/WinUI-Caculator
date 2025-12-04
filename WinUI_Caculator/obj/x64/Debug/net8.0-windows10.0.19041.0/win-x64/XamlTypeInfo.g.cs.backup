@@ -234,7 +234,7 @@ namespace WinUI_Caculator.WinUI_Calculator_XamlTypeInfo
             _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.Button";
             _typeNameTable[5] = "WinUI_Calculator.MainWindow";
             _typeNameTable[6] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[7] = "WinUI_Calculator.ViewModels.CalculatorViewModel";
+            _typeNameTable[7] = "WinUI_Caculator.ViewModels.CalculatorViewModel";
             _typeNameTable[8] = "CommunityToolkit.Mvvm.ComponentModel.ObservableObject";
             _typeNameTable[9] = "WinUI_Calculator.Views.BaseConversionView";
             _typeNameTable[10] = "Microsoft.UI.Xaml.Controls.UserControl";
@@ -253,7 +253,7 @@ namespace WinUI_Caculator.WinUI_Calculator_XamlTypeInfo
             _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.Button);
             _typeTable[5] = typeof(global::WinUI_Calculator.MainWindow);
             _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[7] = typeof(global::WinUI_Calculator.ViewModels.CalculatorViewModel);
+            _typeTable[7] = typeof(global::WinUI_Caculator.ViewModels.CalculatorViewModel);
             _typeTable[8] = typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject);
             _typeTable[9] = typeof(global::WinUI_Calculator.Views.BaseConversionView);
             _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
@@ -299,14 +299,14 @@ namespace WinUI_Caculator.WinUI_Calculator_XamlTypeInfo
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
         private object Activate_5_MainWindow() { return new global::WinUI_Calculator.MainWindow(); }
-        private object Activate_7_CalculatorViewModel() { return new global::WinUI_Calculator.ViewModels.CalculatorViewModel(); }
+        private object Activate_7_CalculatorViewModel() { return new global::WinUI_Caculator.ViewModels.CalculatorViewModel(); }
         private object Activate_9_BaseConversionView() { return new global::WinUI_Calculator.Views.BaseConversionView(); }
         private object Activate_11_CalculatorView() { return new global::WinUI_Calculator.Views.CalculatorView(); }
         private object Activate_12_TemperatureView() { return new global::WinUI_Calculator.Views.TemperatureView(); }
         private object Activate_13_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_5_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.MainWindow).TypeHandle);
-        private void StaticInitializer_7_CalculatorViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.ViewModels.CalculatorViewModel).TypeHandle);
+        private void StaticInitializer_7_CalculatorViewModel() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Caculator.ViewModels.CalculatorViewModel).TypeHandle);
         private void StaticInitializer_8_ObservableObject() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::CommunityToolkit.Mvvm.ComponentModel.ObservableObject).TypeHandle);
         private void StaticInitializer_9_BaseConversionView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.Views.BaseConversionView).TypeHandle);
         private void StaticInitializer_11_CalculatorView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::WinUI_Calculator.Views.CalculatorView).TypeHandle);
@@ -375,7 +375,7 @@ namespace WinUI_Caculator.WinUI_Calculator_XamlTypeInfo
                 xamlType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  WinUI_Calculator.ViewModels.CalculatorViewModel
+            case 7:   //  WinUI_Caculator.ViewModels.CalculatorViewModel
                 userType = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("CommunityToolkit.Mvvm.ComponentModel.ObservableObject"));
                 userType.StaticInitializer = StaticInitializer_7_CalculatorViewModel;
                 userType.SetIsReturnTypeStub();
@@ -588,7 +588,7 @@ namespace WinUI_Caculator.WinUI_Calculator_XamlTypeInfo
                 break;
             case "WinUI_Calculator.MainWindow.ViewModel":
                 userType = (global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinUI_Calculator.MainWindow");
-                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "ViewModel", "WinUI_Calculator.ViewModels.CalculatorViewModel");
+                xamlMember = new global::WinUI_Caculator.WinUI_Calculator_XamlTypeInfo.XamlMember(this, "ViewModel", "WinUI_Caculator.ViewModels.CalculatorViewModel");
                 xamlMember.Getter = get_1_MainWindow_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
