@@ -1,52 +1,123 @@
-﻿# 計畫（Plan）：實作技術藍圖
+﻿# WinUI Calculator — Technical Plan (Plan.md)
 
-目的：將 Spec 中的需求轉換為技術契約、介面與實作里程碑，作為開發與 AI 產出的藍圖。
+Version: 1.0  
+Author: Roy  
+Last Updated: 2025-01-XX  
+Status: Draft → Awaiting Alignment
 
-## 架構概觀
-- 採 MVVM 與 DI。專案新增 `Features/Calculator/` 目錄，包含 `Models`、`ViewModels`、`Views`。
-- 計算邏輯封裝在 `ICalculatorEngine` 與其實作中（`StandardCalculatorEngine`、`ScientificCalculatorEngine`）。
-- 計算回傳一統一型別 `CalculationResult`（Value, IsError, Message）以標準化錯誤處理。
+---
 
-## 介面契約（範例）
-```
+# 1. 架構總攬（Architecture Overview）
+
+WinUI_Calculator (UI)
+├── Views
+├── ViewModels
+│ ├── CalculatorViewModel (將逐步瘦身)
+│ ├── BaseConversionViewModel (新)
+│ └── TemperatureViewModel (新)
+├── Domain
+│ ├── ICalculatorEngine
+│ ├── IBaseConversionEngine
+│ ├── ITemperatureEngine
+│ ├── StandardCalculatorEngine
+│ ├── BaseConversionEngine
+│ └── TemperatureEngine
+└── Services
+└── NavigationService (選用)
+
+---
+
+# 2. 模組設計（Module Design）
+
+## 2.1 四則運算引擎
+
 public interface ICalculatorEngine
 {
-    CalculationResult Calculate(double? operand1, double? operand2, string operation);
+float Add(float a, float b);
+float Sub(float a, float b);
+float Mul(float a, float b);
+float Div(float a, float b);
 }
 
-public record CalculationResult(double? Value, bool IsError, string? Message);
-```
 
-註：`operand2` 對於單元運算（如 sin）可為 null；`operation` 使用穩定標記（例如 "+", "sin"）。
+## 2.2 進制轉換引擎
 
-## DI 與啟動
-- 在 App 啟動時註冊 DI：
-  - `builder.Services.AddSingleton<ICalculatorEngine, StandardCalculatorEngine>();`
-  - 註冊 `CalculatorViewModel`（scope 或 singleton 視需求而定）。
-- ViewModel 透過建構子注入 `ICalculatorEngine`。
+public interface IBaseConversionEngine
+{
+string ToBinary(double value);
+string ToOctal(double value);
+string ToDecimal(double value);
+string ToHex(double value);
+}
 
-## 錯誤策略
-- 計算引擎對於預期的領域性錯誤（除零、定義域外）**不得拋例外**，應回傳 `CalculationResult(IsError=true, Message=...)`。
-- ViewModel 根據 `CalculationResult` 設定 `DisplayText` 以供 UI 綁定。
+## 2.3 溫度轉換引擎
 
-## 測試策略
-- 為 `StandardCalculatorEngine` 撰寫單元測試（加減乘除、除零）。
-- 為 `ScientificCalculatorEngine` 撰寫代表性輸入的單元測試（sin/cos/log 等），使用容差驗證。
-- 撰寫 ViewModel 測試（輸入序列、運算邏輯、錯誤映射）。
-- 整合測試覆蓋常見流程（例如 12 + 34 = 46，10 / 0 -> 錯誤顯示）。
+public interface ITemperatureEngine
+{
+double CelsiusToF(double c);
+double FahrenheitToC(double f);
+double CelsiusToK(double c);
+double KelvinToC(double k);
+}
 
-## 里程碑
-- M1：定義 `ICalculatorEngine` 與失敗的單元測試（RED）。
-- M2：實作 `StandardCalculatorEngine` 以通過基礎測試（GREEN）。
-- M3：實作 `CalculatorViewModel` 並完成 DI 配置；通過 ViewModel 測試。
-- M4：加入科學函數並補測試。
-- M5：整合測試與 Audit，確認符合憲法要求。
+---
 
-## 開放問題（需在 Plan 鎖定前決定）
-- 顯示格式採固定 8 位小數或動態格式？
-- 決定 engine 回傳例外還是統一回傳 Result（建議使用 Result）。
+# 3. UI Flow（View 與 ViewModel）
 
-## DoD（每個里程碑）
-- 對應的單元測試通過（`dotnet test`）。
-- 程式碼符合憲法（無 Code-Behind 邏輯、public API 有 XML 註解）。
-- PR 包含測試、實作與若有的憲法豁免說明。
+## 3.1 MainWindow
+- 不再 new View 和 ViewModel。
+- 改為「ViewModel 來決定模式」+ DataTemplate 或 NavigationService。
+
+## 3.2 每個功能一個 ViewModel
+- CalculatorViewModel：四則運算
+- BaseConversionViewModel：進制轉換
+- TemperatureViewModel：溫度轉換
+
+ViewModel 只做：
+- 接收 UI 指令
+- 驅動 Domain Engine
+- 更新 DisplayText與 MessageText
+
+---
+
+# 4. DI 設定
+
+在 `App.xaml.cs`：
+
+var builder = Host.CreateApplicationBuilder();
+builder.Services.AddSingleton<ICalculatorEngine, StandardCalculatorEngine>();
+builder.Services.AddSingleton<IBaseConversionEngine, BaseConversionEngine>();
+builder.Services.AddSingleton<ITemperatureEngine, TemperatureEngine>();
+
+builder.Services.AddTransient<CalculatorViewModel>();
+builder.Services.AddTransient<BaseConversionViewModel>();
+builder.Services.AddTransient<TemperatureViewModel>();
+
+_services = builder.Build();
+
+
+---
+
+# 5. 遷移計畫（Migration Plan）
+
+## Phase 1
+- 新增 Domain Engines + Tests
+- 修改 ViewModel 改呼叫 Engine
+
+## Phase 2
+- 拆分 ViewModel（三個 VM）
+
+## Phase 3
+- 引入 NavigationService 並移除 code-behind routing
+
+---
+
+# 6. 一致性審查（Consistency Checklist）
+
+| 條目 | 狀態 |
+|------|------|
+| Spec 與 Plan 模型一致 | ☐ |
+| ViewModel 不含業務邏輯 | ☐ |
+| Engine 100% 可測試 | ☐ |
+| DI 全部導入 | ☐ |
+| Code-behind 無邏輯 | ☐ |

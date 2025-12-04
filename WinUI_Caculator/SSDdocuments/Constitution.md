@@ -1,37 +1,105 @@
-﻿# 專案憲法（Constitution） — SDD 基線
-
-目的：此文件為專案最高開發規範，定義架構原則、品質閘門與 AI 協作限制。所有設計、實作與變更需遵守本憲法，若需例外必須在 `Plan.md` 提出並獲團隊核准。
-
-## 1. 架構與責任分界
-- 採用 MVVM：View 僅負責 UI 顯示與綁定；ViewModel 管理狀態和行為；Model 負責純演算法或資料處理。
-- 嚴禁在 `*.xaml.cs`（Code-Behind）撰寫業務邏輯或演算法；僅允許最小的 UI 初始化程式碼。
-- 外部相依需以介面注入（DI）；禁止在類別內直接 `new` 建立服務實例（例外需在 Plan 說明）。
-
-## 2. 品質閘門（Quality Gates）
-- 所有 public API 必須具備 XML 註解（summary、param、returns）。
-- 單一方法行數上限 50 行；超過則需拆分或提出理由。
-- 單元測試：關鍵模組（ViewModel、Model 演算法）目標覆蓋率 >= 80%（以模組重要性分級）。
-- Cyclomatic Complexity 建議 < 10；違規時需重構或拆分。
-
-## 3. 禁止清單（Negative Constraints）
-- 禁止魔術數字/字串：請以 `const`、`readonly` 或 `enum` 命名常數。
-- 禁止使用全域可變 `static` 狀態保存應用資料（以 DI 管理之 Singleton 例外）。
-- 禁止未經審核新增第三方套件；新增相依須在 Plan 提案並取得批准。
-
-## 4. 技術棧限定
-- C# 10 / .NET 8
-- WinUI 3（Windows App SDK）
-- CommunityToolkit.Mvvm
-- 測試框架：MSTest 或 xUnit（遵循專案既有慣例）
-
-## 5. AI 與 SDD 使用規範
-- 規格（Spec）、計畫（Plan）與憲法為開發基準，AI 產出程式碼前必須先檢查與這三份文件的一致性。
-- 每次憲法變更需記錄 ChangeLog（版本、變更內容、理由），並在 AI 對話中重新載入最新版本以避免模型偏差。
-
-## 6. 變更 / 豁免流程
-- 若實作需要違反憲法，應在 `Plan.md` 提出豁免申請（含風險、替代方案與測試計畫），並取得團隊核可後方可執行。
+﻿# WinUI Calculator – Project Constitution
+SDD Project Constitution v1.0  
+Author: Roy  
+Last Updated: 2025-01-XX  
+Status: Active
 
 ---
 
-ChangeLog:
-- v1.0 - 建立 SDD-aligned 基線憲法。
+# 1. 專案使命（Mission）
+建立一套 WinUI 3 計算器應用，提供：
+- 四則運算
+- 進制轉換
+- 溫度轉換
+
+並以 SDD（Specification-Driven Development）進行開發，確保：
+- 高可維護性
+- 良好模組化
+- 可測試的 Domain Logic
+- UI 與邏輯分離
+- 一致性高品質
+
+---
+
+# 2. 架構總原則（Architecture Principles）
+
+## 2.1 分層架構
+專案必須遵循下列分層：
+
+UI (Views)
+→ ViewModel (Thin)
+→ Domain / Engines (Pure Logic)
+→ Services / Utilities
+
+
+## 2.2 MVVM 原則
+- View 不得包含商業邏輯。
+- ViewModel 不得包含計算實作（不得寫 Calculate、ConvertBase 等邏輯）。
+- 所有邏輯必須放在 Engine / Domain 層。
+
+---
+
+# 3. Code-Behind 原則（非常重要）
+- Code-behind 僅允許：
+  - UI 初始化
+  - NavigationService 呼叫
+  - Minimal glue code（不得含商業邏輯）
+- Code-behind 禁止：
+  - new ViewModel
+  - 操作核心邏輯
+  - 資料轉換
+  - 控制狀態流程
+
+---
+
+# 4. 品質標準（Quality Standards）
+
+## 4.1 命名規範
+- 類別：PascalCase
+- 方法：PascalCase
+- 變數：camelCase
+- 常數：UPPER_CASE
+-禁止英文錯字（例如 WinUI_Caculator 必須修正為 WinUI_Calculator）
+
+## 4.2 函式長度原則
+- 一個方法不得超過 25 行。
+- 循環複雜度不得超過 8。
+
+## 4.3 禁止 Magic Number
+- 所有數字常數必須抽出為 const 或 static readonly。
+- UI 尺寸除外。
+
+## 4.4 Null Safety
+- 所有 public 方法需要明確異常處理或回傳 safe value。
+
+---
+
+# 5. 測試規範（Testing Rules）
+
+## 5.1 必須採 TDD
+每個功能必須遵循  
+**RED → GREEN → REFACTOR**
+
+## 5.2 ViewModel 不得寫不可測試的邏輯  
+所有 Domain Engine 必須 100% 可測試。
+
+## 5.3 測試覆蓋率目標
+- Domain Layer：90%+
+- ViewModel Layer：70%+
+- UI Layer：人工驗證
+
+---
+
+# 6. DI（Dependency Injection）原則
+- App 啟動時必須使用 HostBuilder 建立 DI Container。
+- 所有 ViewModel、Engine、Service 必須透過 DI 注入。
+- 禁止 new Engine() 出現在 ViewModel 中。
+
+---
+
+# 7. 專案最終目標（Final State Goal）
+- 三種功能（Arithmetic / BaseConversion / Temperature）均獨立分層。
+- UI 不依賴邏輯。
+- Domain Engine 完全獨立、可測試。
+- MainWindow 不含業務邏輯、無 ViewModel new。
+- 開發流程全部遵循 SDD。

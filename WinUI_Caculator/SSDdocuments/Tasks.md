@@ -1,37 +1,71 @@
-﻿# 任務清單（Tasks）：SDD + TDD 執行步驟
+﻿# WinUI Calculator – Tasks (SDD)
 
-此清單將 Spec 與 Plan 切分為原子化的 TDD 任務（Red → Green → Refactor），便於與 AI/團隊逐步執行。
+Version: 1.0  
+Author: Roy  
+Status: Active
 
-Phase 0：基礎建設
-- Task 0.1 (RED)：建立測試專案 `WinUI_Calculator.Tests`（若尚未存在），新增測試以驗證 `ICalculatorEngine` 被註冊於 DI 中。
-- Task 0.2 (GREEN)：在 App 啟動註冊 `ICalculatorEngine` 與 `CalculatorViewModel`。
-- Task 0.3 (REFACTOR)：確保 DI 註冊遵守憲法（以介面註冊、加上必要 XML 註解）。
+---
 
-Phase 1：核心引擎
-- Task 1.1 (RED)：建立 `ICalculatorEngine` 介面，並在 `StandardCalculatorEngineTests` 撰寫失敗測試（加/減/乘/除）。
-- Task 1.2 (GREEN)：實作 `StandardCalculatorEngine`，達到基礎算術測試通過。
-- Task 1.3 (REFACTOR)：若方法過長或複雜，拆分並加入 XML 註解。
+# Phase 1 — 建立 Domain 與測試（必須先完成）
 
-- Task 1.4 (RED)：針對除以零撰寫測試，預期 `CalculationResult.IsError == true` 且 Message 為 "Cannot divide by zero"。
-- Task 1.5 (GREEN)：更新引擎實作以回傳錯誤結果而非拋例外。
-- Task 1.6 (REFACTOR)：抽出常數（避免魔術字串），並更新文件。
+## Task 1.1 — 建立測試專案（RED）
+- 建立 `WinUI_Calculator.Core.Tests`
+- 新增 `CalculatorEngineTests.cs`
+- 撰寫 Add/Sub/Mul/Div 測試（先失敗）
 
-Phase 2：科學函數
-- Task 2.1 (RED)：為 `sin`/`cos`/`tan`/`sqrt`/`log`/`pow` 撰寫單元測試（代表性數值與容差驗證）。
-- Task 2.2 (GREEN)：實作科學函數或擴充現有引擎以通過測試。
-- Task 2.3 (REFACTOR)：統一誤差容忍常數與顯示格式設定。
+**DoD：測試執行並全部 → 失敗（紅燈）**
 
-Phase 3：ViewModel 與整合
-- Task 3.1 (RED)：撰寫 `CalculatorViewModelTests`（輸入序列、操作鍵、等於、錯誤顯示）。
-- Task 3.2 (GREEN)：實作 `CalculatorViewModel` 並透過 DI 注入 `ICalculatorEngine`。
-- Task 3.3 (REFACTOR)：確認 `INotifyPropertyChanged` 正確觸發，並補上 XML 註解。
+---
 
-Phase 4：稽核與釋出
-- Task 4.1：加入整合測試覆蓋常見使用流程。
-- Task 4.2：執行靜態分析與代碼掃描，確認符合 `Constitution` 規範。
-- Task 4.3：產出 Audit 報告並關閉任務清單。
+## Task 1.2 — 實作 StandardCalculatorEngine（GREEN）
+- 實作 ICalculatorEngine
+- 通過所有 Task 1.1 的測試
 
-注意：
-- 每個 RED 任務先撰寫失敗的測試並執行 `dotnet test` 確認為失敗。
-- 每個 GREEN 任務實作最小通過測試的程式碼。
-- 每個 REFACTOR 任務在不改變行為的前提下提升程式碼品質並保持測試通過。
+**DoD：所有四則測試綠燈**
+
+---
+
+## Task 1.3 — 重構並導入 ViewModel（REFACTOR）
+- CalculatorViewModel 的四則邏輯移除，改呼叫 engine.Div/Add/etc.
+- UI 不變，行為一致
+
+**DoD：行為一致、測試仍綠燈**
+
+---
+
+# Phase 2 — 進制轉換
+
+## Task 2.1 — 建立 BaseConversionEngine（RED）
+- 撰寫測試：十進 → 二進、十進 → Hex、小數轉換等
+
+## Task 2.2 — 實作 BaseConversionEngine（GREEN）
+
+## Task 2.3 — 重構 BaseConversion 相關邏輯（REFACTOR）
+
+---
+
+# Phase 3 — 溫度轉換
+
+## Task 3.1 — 建立 TemperatureEngine 測試（RED）
+## Task 3.2 — 實作 TemperatureEngine（GREEN）
+## Task 3.3 — 重構 Temperature VM（REFACTOR）
+
+---
+
+# Phase 4 — 移除 code-behind UI routing
+
+## Task 4.1 — 加入 NavigationService
+## Task 4.2 — MainWindow 移除 new View/VM
+## Task 4.3 — 使用 DataTemplate 或 NavigationService 完成 routing
+
+---
+
+# Phase 5 — 稽核（Audit）
+
+## Task 5.1 — 檢查憲法一致性
+## Task 5.2 — 檢查 Spec 與 Plan 一致性
+## Task 5.3 — 靜態分析（Cyclomatic Complexity ≤ 8）
+## Task 5.4 — 文件回寫（Spec/Plan 更新）
+
+---
+
