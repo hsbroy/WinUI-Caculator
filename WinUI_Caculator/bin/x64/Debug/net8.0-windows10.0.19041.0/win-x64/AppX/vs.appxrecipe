@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-12-02T12:50:03.535</Modified>
+      <Modified>2025-12-04T05:07:50.697</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -39,11 +39,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>WinUI_Calculator.exe</PackagePath>
-      <Modified>2025-12-02T12:50:02.835</Modified>
+      <Modified>2025-12-04T05:07:49.966</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\source\repos\WinUI_Caculator\WinUI_Caculator\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\WinUI_Calculator.dll">
       <PackagePath>WinUI_Calculator.dll</PackagePath>
-      <Modified>2025-12-02T12:50:02.824</Modified>
+      <Modified>2025-12-04T05:07:49.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\roy15\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.22\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>

@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System;
 
-namespace WinUI_Caculator.ViewModels
+namespace WinUI_Calculator.ViewModels
 {
     public enum Operator { ADD = '+', SUB = '-', MUL = '*', DIV = '/' }
 
